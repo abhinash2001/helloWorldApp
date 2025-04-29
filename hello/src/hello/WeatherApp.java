@@ -16,14 +16,15 @@ public class WeatherApp {
         String city = scanner.nextLine();
         
         // Replace with your actual API key
-        String apiKey = "YOUR_API_KEY_HERE"; 
+        String apiKey = "4475e716f12c4900e8495e290d40123f"; 
         
         String urlString = String.format(
             "https://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s&units=metric", 
             city, apiKey);
 
         try {
-            URL url = new URL(urlString);
+            @SuppressWarnings("deprecation")
+			URL url = new URL(urlString);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
 
